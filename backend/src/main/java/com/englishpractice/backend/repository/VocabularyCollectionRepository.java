@@ -1,19 +1,18 @@
 package com.englishpractice.backend.repository;
 
+import com.englishpractice.backend.entity.VocabularyCollection;
 import java.util.UUID;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.englishpractice.backend.entity.VocabularyCollection;
+public interface VocabularyCollectionRepository extends JpaRepository<VocabularyCollection, UUID> {
 
-public interface VocabularyCollectionRepository
-        extends JpaRepository<VocabularyCollection, UUID> {
-
-    @Query(value = """
+  @Query(
+      value =
+          """
             SELECT vc
             FROM VocabularyCollection vc
             WHERE
@@ -37,7 +36,9 @@ public interface VocabularyCollectionRepository
                 AND (:popular IS NULL
                     OR :popular = false
                     OR vc.studyCount >= 100)
-            """, countQuery = """
+            """,
+      countQuery =
+          """
             SELECT COUNT(vc)
             FROM VocabularyCollection vc
             WHERE
@@ -62,11 +63,11 @@ public interface VocabularyCollectionRepository
                     OR :popular = false
                     OR vc.studyCount >= 100)
             """)
-    Page<VocabularyCollection> search(
-            @Param("keyword") String keyword,
-            @Param("topicId") UUID topicId,
-            @Param("levelId") UUID levelId,
-            @Param("purposeId") UUID purposeId,
-            @Param("popular") Boolean popular,
-            Pageable pageable);
+  Page<VocabularyCollection> search(
+      @Param("keyword") String keyword,
+      @Param("topicId") UUID topicId,
+      @Param("levelId") UUID levelId,
+      @Param("purposeId") UUID purposeId,
+      @Param("popular") Boolean popular,
+      Pageable pageable);
 }
