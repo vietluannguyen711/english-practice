@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.englishpractice.backend.dto.VocabularyCollectionResponse;
 import com.englishpractice.backend.entity.VocabularyCollection;
 import com.englishpractice.backend.repository.VocabularyCollectionRepository;
 
@@ -25,7 +26,7 @@ public class VocabularyCollectionService {
 
     private final VocabularyCollectionRepository repository;
 
-    public Page<VocabularyCollection> search(
+    public Page<VocabularyCollectionResponse> search(
             Integer page,
             Integer size,
             String keyword,
@@ -63,6 +64,6 @@ public class VocabularyCollectionService {
                 purposeId,
                 popular,
                 pageable
-        );
+        ).map(VocabularyCollectionResponse::from);
     }
 }
