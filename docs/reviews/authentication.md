@@ -7,7 +7,7 @@
 |---|---|---|
 | AUTH-T01 | Database & Entity | Done |
 | AUTH-T02 | Register DTO | Done |
-| AUTH-T03 | User Repository | Todo |
+| AUTH-T03 | User Repository | Done |
 | AUTH-T04 | Register Service | Todo |
 | AUTH-T05 | Exception Handling | Todo |
 | AUTH-T06 | Register Controller & Security | Todo |
@@ -39,3 +39,12 @@ Status: Done
 |R02|	Không cần custom validator để kiểm tra password và confirmPassword trong DTO. Giữ logic kiểm tra tại AuthService.|	Accepted	|Accepted|
 |R03|	RegisterResponse chỉ cần field message cho luồng Register hiện tại. Chưa cần bổ sung field khác.|	Accepted	|Accepted|
 
+
+## AUTH-T03 - User Repository
+Status: Done
+
+### Reviews
+|Review ID|	Nội dung review|	Quyết định|	Status|
+|---|---|---|---|
+|R01|	Kế thừa JpaRepository<User, UUID> phù hợp với User Entity.|	Accepted	|Accepted|
+|R02	|existsByEmail(String email) phù hợp với nhu cầu kiểm tra email tồn tại.|	Accepted|	Accepted|
