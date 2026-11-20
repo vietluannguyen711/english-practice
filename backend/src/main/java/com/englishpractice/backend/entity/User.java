@@ -42,9 +42,10 @@ public class User {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
-    @Column (nullable = false)
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private UserRole role;
+    @Builder.Default
+    private UserRole role = UserRole.ROLE_USER;
     @Column
     private String avatar;
     @Column(nullable = false)
