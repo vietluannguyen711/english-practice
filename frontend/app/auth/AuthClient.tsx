@@ -45,6 +45,10 @@ export default function AuthClient() {
         setLoading(true);
 
         try {
+            if (isSignUp && password !== confirmPassword) {
+                setError("Mật khẩu xác nhận không khớp.");
+                return;
+            }
             const result = isSignUp
                 ? await register({
                       firstName,

@@ -1,10 +1,9 @@
-import { Eye, EyeOff, LucideIcon, Mail } from "lucide-react";
+import { Eye, EyeOff, LucideIcon } from "lucide-react";
 import Link from "next/link";
 import type {
     Dispatch,
-    ElementType,
     InputHTMLAttributes,
-    SetStateAction,
+    SetStateAction
 } from "react";
 
 interface TextInputProps extends Omit<

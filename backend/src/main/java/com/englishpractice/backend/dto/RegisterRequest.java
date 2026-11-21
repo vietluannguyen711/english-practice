@@ -2,6 +2,7 @@ package com.englishpractice.backend.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,9 +15,11 @@ public class RegisterRequest {
     private String email;
 
     @NotBlank(message = "Mật khẩu không được để trống")
+    @Size(min = 8)
     private String password;
 
     @NotBlank(message = "Mật khẩu xác nhận không được để trống")
+    @Size(min = 8)
     private String confirmPassword;
 
     @NotBlank(message = "Tên không được để trống")
