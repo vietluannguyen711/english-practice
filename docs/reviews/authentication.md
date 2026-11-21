@@ -8,7 +8,7 @@
 | AUTH-T01 | Database & Entity | Done |
 | AUTH-T02 | Register DTO | Done |
 | AUTH-T03 | User Repository | Done |
-| AUTH-T04 | Register Service | Todo |
+| AUTH-T04 | Register Service | Done |
 | AUTH-T05 | Exception Handling | Todo |
 | AUTH-T06 | Register Controller & Security | Todo |
 | AUTH-T07 | Register Frontend | Todo |
@@ -48,3 +48,15 @@ Status: Done
 |---|---|---|---|
 |R01|	Kế thừa JpaRepository<User, UUID> phù hợp với User Entity.|	Accepted	|Accepted|
 |R02	|existsByEmail(String email) phù hợp với nhu cầu kiểm tra email tồn tại.|	Accepted|	Accepted|
+
+
+## AUTH-T04 - Register Service
+Status: Done
+### Reviews
+|Review ID	|Nội dung	|Quyết định	|Status|
+|---|---|---|---|
+|R01|	Kiểm tra password và confirmPassword trong Service|	Accepted	|Accepted|
+|R02|	Dùng IllegalArgumentException cho email đã tồn tại	|Deferred	|Deferred|
+|R03|	Mã hóa password trước khi lưu|	Accepted|	Accepted|
+|R04|	Tạo User với role và trạng thái mặc định|	Accepted|	Accepted|
+|R05|	Lưu User và trả RegisterResponse|	Accepted|	Accepted|
