@@ -11,7 +11,7 @@
 | AUTH-T04 | Register Service | Done |
 | AUTH-T05 | Exception Handling | Done |
 | AUTH-T06 | Register Controller & Security | Done |
-| AUTH-T07 | Register Frontend | Todo |
+| AUTH-T07 | Register Frontend | Done |
 
 
 
@@ -83,3 +83,12 @@ Status: Done
 |R04	|Tắt CSRF trong API hiện tại|Accepted|	Accepted|
 |R05	|Phân biệt HTTP 401 và 403|	Accepted	|Accepted|
 |R06	|Tái sử dụng ErrorResponse cho Security errors|	Accepted	|Accepted|
+
+## AUTH-T07 - Register Frontend
+
+Review ID	Nội dung	Đề xuất quyết định	Status
+R01	Thiếu kiểm tra password và confirmPassword ở Frontend	Accepted – nên sửa	Verified
+R02	Password tối thiểu 8 ký tự chưa đồng nhất với Backend	Cần xác nhận yêu cầu	Verified
+R03	Trang /auth mặc định mở Login dù Backend Login chưa triển khai	Cần xác nhận thiết kế	Accepted
+R04	Có import không sử dụng	Accepted – nên sửa	Verified
+R05	Commit chứa nhiều component ngoài phạm vi AUTH-T07	Đề xuất tách commit ở các lần sau	Deferred
