@@ -60,3 +60,14 @@ Status: Done
 |R03|	Mã hóa password trước khi lưu|	Accepted|	Accepted|
 |R04|	Tạo User với role và trạng thái mặc định|	Accepted|	Accepted|
 |R05|	Lưu User và trả RegisterResponse|	Accepted|	Accepted|
+
+## AUTH-T05 - Exception Handling
+Status: Done
+### Reviews
+|Review ID|	Nội dung review	|Quyết định	|Status|
+|---|---|---|---|
+|R01|	Xử lý IllegalArgumentException trả HTTP 400|	Accepted	|Accepted|
+|R02|	Chỉ trả validation error đầu tiên|	Accepted|	Accepted|
+|R03|	Xử lý HttpMessageNotReadableException|	Accepted	|Accepted|
+|R04|	Phân biệt AccessDeniedException tự định nghĩa và của Spring Security|	Accepted|Accepted|
+|R05|	ResourceNotFoundException trả HTTP 404|	Accepted|	Accepted|
