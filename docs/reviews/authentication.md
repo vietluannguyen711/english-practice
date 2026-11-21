@@ -9,8 +9,8 @@
 | AUTH-T02 | Register DTO | Done |
 | AUTH-T03 | User Repository | Done |
 | AUTH-T04 | Register Service | Done |
-| AUTH-T05 | Exception Handling | Todo |
-| AUTH-T06 | Register Controller & Security | Todo |
+| AUTH-T05 | Exception Handling | Done |
+| AUTH-T06 | Register Controller & Security | Done |
 | AUTH-T07 | Register Frontend | Todo |
 
 
@@ -71,3 +71,15 @@ Status: Done
 |R03|	Xử lý HttpMessageNotReadableException|	Accepted	|Accepted|
 |R04|	Phân biệt AccessDeniedException tự định nghĩa và của Spring Security|	Accepted|Accepted|
 |R05|	ResourceNotFoundException trả HTTP 404|	Accepted|	Accepted|
+
+## AUTH-T06 - Register Controller & Security
+Status: Done
+
+|Review ID|	Nội dung review|	Quyết định|	Status|
+|---|---|---|---|
+|R01	|AuthController mapping và trả HTTP 201	|Accepted	|Accepted|
+|R02	|PasswordEncoder sử dụng BCrypt	|Accepted	|Accepted|
+|R03	|Cho phép truy cập /api/v1/auth/**	|Accepted	|Accepted|
+|R04	|Tắt CSRF trong API hiện tại|Accepted|	Accepted|
+|R05	|Phân biệt HTTP 401 và 403|	Accepted	|Accepted|
+|R06	|Tái sử dụng ErrorResponse cho Security errors|	Accepted	|Accepted|
