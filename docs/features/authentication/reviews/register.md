@@ -1,19 +1,6 @@
 
 # Authentication
 
-## Flow: Register
-
-| Task ID | Task | Status |
-|---|---|---|
-| AUTH-T01 | Database & Entity | Done |
-| AUTH-T02 | Register DTO | Done |
-| AUTH-T03 | User Repository | Done |
-| AUTH-T04 | Register Service | Done |
-| AUTH-T05 | Exception Handling | Done |
-| AUTH-T06 | Register Controller & Security | Done |
-| AUTH-T07 | Register Frontend | Done |
-
-
 
 ## AUTH-T01 – Database & Entity
 
@@ -21,7 +8,7 @@ Status: Done
 
 ### Reviews
 
-| ID | Nội dung | Quyết định | Status |
+|Review ID|	Nội dung |	Quyết định|	Kết quả|
 |---|---|---|---|
 | R01 | UUID generation phù hợp | Accepted | Accepted |
 | R02 | Password nullable để hỗ trợ OAuth2 | Accepted | Accepted |
@@ -33,7 +20,7 @@ Status: Done
 Status: Done
 
 ### Reviews
-|Review ID|	Nội dung review|	Quyết định|	Status|
+|Review ID|	Nội dung |	Quyết định|	Kết quả|
 |---|---|---|---|
 |R01	|@Email nên có message riêng để thông báo khi email không hợp lệ.	|Accepted|	Fixed
 |R02|	Không cần custom validator để kiểm tra password và confirmPassword trong DTO. Giữ logic kiểm tra tại AuthService.|	Accepted	|Accepted|
@@ -44,7 +31,7 @@ Status: Done
 Status: Done
 
 ### Reviews
-|Review ID|	Nội dung review|	Quyết định|	Status|
+|Review ID|	Nội dung |	Quyết định|	Kết quả|
 |---|---|---|---|
 |R01|	Kế thừa JpaRepository<User, UUID> phù hợp với User Entity.|	Accepted	|Accepted|
 |R02	|existsByEmail(String email) phù hợp với nhu cầu kiểm tra email tồn tại.|	Accepted|	Accepted|
@@ -53,7 +40,7 @@ Status: Done
 ## AUTH-T04 - Register Service
 Status: Done
 ### Reviews
-|Review ID	|Nội dung	|Quyết định	|Status|
+|Review ID|	Nội dung |	Quyết định|	Kết quả|
 |---|---|---|---|
 |R01|	Kiểm tra password và confirmPassword trong Service|	Accepted	|Accepted|
 |R02|	Dùng IllegalArgumentException cho email đã tồn tại	|Deferred	|Deferred|
@@ -64,7 +51,7 @@ Status: Done
 ## AUTH-T05 - Exception Handling
 Status: Done
 ### Reviews
-|Review ID|	Nội dung review	|Quyết định	|Status|
+|Review ID|	Nội dung |	Quyết định|	Kết quả|
 |---|---|---|---|
 |R01|	Xử lý IllegalArgumentException trả HTTP 400|	Accepted	|Accepted|
 |R02|	Chỉ trả validation error đầu tiên|	Accepted|	Accepted|
@@ -75,7 +62,7 @@ Status: Done
 ## AUTH-T06 - Register Controller & Security
 Status: Done
 
-|Review ID|	Nội dung review|	Quyết định|	Status|
+|Review ID|	Nội dung |	Quyết định|	Kết quả|
 |---|---|---|---|
 |R01	|AuthController mapping và trả HTTP 201	|Accepted	|Accepted|
 |R02	|PasswordEncoder sử dụng BCrypt	|Accepted	|Accepted|
@@ -86,9 +73,10 @@ Status: Done
 
 ## AUTH-T07 - Register Frontend
 
-Review ID	Nội dung	Đề xuất quyết định	Status
-R01	Thiếu kiểm tra password và confirmPassword ở Frontend	Accepted – nên sửa	Verified
-R02	Password tối thiểu 8 ký tự chưa đồng nhất với Backend	Cần xác nhận yêu cầu	Verified
-R03	Trang /auth mặc định mở Login dù Backend Login chưa triển khai	Cần xác nhận thiết kế	Accepted
-R04	Có import không sử dụng	Accepted – nên sửa	Verified
-R05	Commit chứa nhiều component ngoài phạm vi AUTH-T07	Đề xuất tách commit ở các lần sau	Deferred
+|Review ID|	Nội dung |	Quyết định|	Kết quả|
+|---|---|---|---|
+|R01	|Thiếu kiểm tra password và confirmPassword ở Frontend	|Accepted – nên sửa	|Verified|
+|R02	|Password tối thiểu 8 ký tự chưa đồng nhất với Backend	|Cần xác nhận yêu cầu|	Verified|
+|R03	|Trang /auth mặc định mở Login dù Backend Login chưa triển khai	|Cần xác nhận thiết kế	|Accepted|
+|R04	|Có import không sử dụng	|Accepted – nên sửa	|Verified|
+|R05	|Commit chứa nhiều component ngoài phạm vi AUTH-T07|	Đề xuất tách commit ở các lần sau|	Deferred|
