@@ -11,28 +11,28 @@ import org.springframework.security.web.SecurityFilterChain;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final SecurityErrorResponseWriter securityErrorResponseWriter;
+  private final SecurityErrorResponseWriter securityErrorResponseWriter;
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(
-                        auth -> auth.requestMatchers("/api/v1/auth/**")
-                                .permitAll()
-                                .anyRequest()
-                                .authenticated())
+  @Bean
+  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    http.csrf(csrf -> csrf.disable())
+        .authorizeHttpRequests(
+            auth ->
+                auth.requestMatchers("/api/v1/auth/**").permitAll().anyRequest().authenticated())
+        .exceptionHandling(
+            exceptions ->
+                exceptions
+                    .authenticationEntryPoint(
+                        (request, response, exception) ->
+                            securityErrorResponseWriter.write(
+                                response, HttpStatus.UNAUTHORIZED, "Yêu cầu xác thực"))
+                    .accessDeniedHandler(
+                        (request, response, exception) ->
+                            securityErrorResponseWriter.write(
+                                response,
+                                HttpStatus.FORBIDDEN,
+                                "Bạn không đủ quyền truy cập tới tài nguyên này")));
 
-                .exceptionHandling(
-                        exceptions -> exceptions
-                                .authenticationEntryPoint(
-                                        (request, response, exception) -> securityErrorResponseWriter.write(
-                                                response, HttpStatus.UNAUTHORIZED, "Yêu cầu xác thực"))
-                                .accessDeniedHandler(
-                                        (request, response, exception) -> securityErrorResponseWriter.write(
-                                                response,
-                                                HttpStatus.FORBIDDEN,
-                                                "Bạn không đủ quyền truy cập tới tài nguyên này")));
-
-        return http.build();
-    }
+    return http.build();
+  }
 }

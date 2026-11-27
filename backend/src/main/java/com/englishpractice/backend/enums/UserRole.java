@@ -4,14 +4,13 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum UserRole {
-    ROLE_ADMIN("Admin"),
-    ROLE_USER("User"),
-    ROLE_MODERATOR("Moderator");
+  ROLE_ADMIN("Admin"),
+  ROLE_USER("User"),
+  ROLE_MODERATOR("Moderator");
 
-    private final String displayName;
+  private final String displayName;
 
-    public String getDisplayName() {
-        return displayName;
-    }
-
+  public String getDisplayName() {
+    return displayName;
+  }
 }

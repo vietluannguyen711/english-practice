@@ -1,15 +1,13 @@
 package com.englishpractice.backend.exception;
 
+import com.englishpractice.backend.dto.ErrorResponse;
 import java.time.LocalDateTime;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import com.englishpractice.backend.dto.ErrorResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -51,10 +49,11 @@ public class GlobalExceptionHandler {
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public ErrorResponse handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
 
-    String message = ex.getBindingResult().getFieldErrors().stream()
-        .findFirst()
-        .map(error -> error.getDefaultMessage())
-        .orElse("Dữ liệu yêu cầu không hợp lệ");
+    String message =
+        ex.getBindingResult().getFieldErrors().stream()
+            .findFirst()
+            .map(error -> error.getDefaultMessage())
+            .orElse("Dữ liệu yêu cầu không hợp lệ");
 
     return ErrorResponse.builder()
         .status(HttpStatus.BAD_REQUEST.value())
