@@ -34,6 +34,17 @@ public class GlobalExceptionHandler {
         .build();
   }
 
+  @ExceptionHandler(UnauthorizedException.class)
+  @ResponseStatus(HttpStatus.UNAUTHORIZED)
+  public ErrorResponse handleUnauthorizedException(UnauthorizedException ex) {
+
+    return ErrorResponse.builder()
+        .status(HttpStatus.UNAUTHORIZED.value())
+        .message(ex.getMessage())
+        .timestamp(LocalDateTime.now())
+        .build();
+  }
+
   @ExceptionHandler(AccessDeniedException.class)
   @ResponseStatus(HttpStatus.FORBIDDEN)
   public ErrorResponse handleAccessDeniedException(AccessDeniedException ex) {
