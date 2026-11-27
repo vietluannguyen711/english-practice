@@ -1,3 +1,16 @@
+#!/usr/bin/env sh
+
+# Format frontend files
 npx lint-staged
-cd backend && ./mvnw spotless:apply
-git add -u
+
+# Format backend Java files when needed
+JAVA_FILES=$(git diff --cached --name-only --diff-filter=ACMR -- '*.java')
+
+if [ -n "$JAVA_FILES" ]; then
+    echo "Formatting Java files..."
+    (cd backend && ./mvnw spotless:apply) || exit 1
+
+    echo "$JAVA_FILES" | while IFS= read -r file; do
+        git add -- "$file"
+    done
+fi
