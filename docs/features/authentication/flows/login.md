@@ -48,4 +48,4 @@ Giữ bảng Task như hiện tại:
 | AUTH-T11 | Login Service     | Done   | 553fe73a86fe1980b13fb5b0c57096d638ad0df2 |
 | AUTH-T12 | LoginResponse DTO | Done   | 553fe73a86fe1980b13fb5b0c57096d638ad0df2 |
 | AUTH-T13 | Controller        | Done   | 553fe73a86fe1980b13fb5b0c57096d638ad0df2 |
-| AUTH-T14 | Login Frontend    | _      | _                                        |
+| AUTH-T14 | Login Frontend    | Done   | 6b652cab3b9739be37224f5d9661e0872bf2a58d |
