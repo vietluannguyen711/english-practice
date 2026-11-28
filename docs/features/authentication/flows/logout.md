@@ -23,4 +23,3 @@ Task List
 | -------- | -------------------------------------------------------- | ------ | ------ |
 | AUTH-T15 | Logout button trên Header cùng với Nav, layout Dashboard | Done   | e2fa   |
 | AUTH-T16 | Logout action                                            | Done   | e2fa   |
-| AUTH-T17 | Cập nhật Header                                          |        |        |
