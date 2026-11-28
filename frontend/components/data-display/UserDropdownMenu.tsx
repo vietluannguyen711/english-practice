@@ -20,7 +20,7 @@ import {
 
 interface UserDropdownMenuProps {
   fullName: string;
-  username: string;
+  email?: string;
   avatarUrl?: string | null;
   onSignOut?: () => void;
 }
@@ -59,7 +59,7 @@ function getInitials(fullName: string): string {
 
 export default function UserDropdownMenu({
   fullName,
-  username,
+  email,
   avatarUrl,
   onSignOut,
 }: UserDropdownMenuProps) {
@@ -125,7 +125,7 @@ export default function UserDropdownMenu({
 
               <div className="min-w-0 flex-1">
                 <p className="truncate font-semibold text-slate-800">{fullName}</p>
-                <p className="truncate text-xs text-slate-500">@{username}</p>
+                <p className="truncate text-xs text-slate-500">{email}</p>
               </div>
 
               <button
