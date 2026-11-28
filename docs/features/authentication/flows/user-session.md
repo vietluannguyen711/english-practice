@@ -22,8 +22,8 @@ Mục đích của luồng là hiển thị đúng trạng thái của người 
 
 ### **3. Task List**
 
-| Task ID  | Task                                                                               | Status | Commit |
-| -------- | ---------------------------------------------------------------------------------- | ------ | ------ |
-| AUTH-T17 | Get Current User API Backend GET /api/v1/users/me                                  |        |        |
-| AUTH-T18 | Get Current User Action Frontend Server Action gọi API và lấy thông tin User       |        |        |
-| AUTH-T19 | Update Header UI Hiển thị Login/Register hoặc Avatar tùy trạng thái Authentication |        |        |
+| Task ID  | Task                                                                               | Status | Commit                                   |
+| -------- | ---------------------------------------------------------------------------------- | ------ | ---------------------------------------- |
+| AUTH-T17 | Get Current User API Backend GET /api/v1/users/me                                  | Done   | 04f6ad69b370d031969f9c268cf3421900197d2b |
+| AUTH-T18 | Get Current User Action Frontend Server Action gọi API và lấy thông tin User       |        |                                          |
+| AUTH-T19 | Update Header UI Hiển thị Login/Register hoặc Avatar tùy trạng thái Authentication |        |                                          |
