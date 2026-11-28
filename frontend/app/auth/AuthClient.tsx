@@ -78,7 +78,7 @@ export default function AuthClient() {
       }
 
       showToast("Đăng nhập thành công.", "success");
-      router.push("/dashboard");
+      router.push("/");
     } catch {
       const message = "Đã xảy ra lỗi. Vui lòng thử lại.";
       setError(message);

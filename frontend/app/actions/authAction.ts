@@ -135,5 +135,5 @@ export async function logout() {
   const cookieStore = await cookies();
   cookieStore.delete("accessToken");
   cookieStore.delete("refreshToken");
-  redirect("/");
+  redirect("/login");
 }
