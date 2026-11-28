@@ -19,8 +19,8 @@ Mục đích của luồng là cho phép người dùng đăng xuất khỏi h�
 
 Task List
 
-| Task ID  | Task                                                     | Status |
-| -------- | -------------------------------------------------------- | ------ |
-| AUTH-T15 | Logout button trên Header cùng với Nav, layout Dashboard |        |
-| AUTH-T16 | Logout action                                            |        |
-| AUTH-T17 | Cập nhật Header                                          |        |
+| Task ID  | Task                                                     | Status | Commit |
+| -------- | -------------------------------------------------------- | ------ | ------ |
+| AUTH-T15 | Logout button trên Header cùng với Nav, layout Dashboard | Done   | e2fa   |
+| AUTH-T16 | Logout action                                            | Done   | e2fa   |
+| AUTH-T17 | Cập nhật Header                                          |        |        |
